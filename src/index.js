@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Credentials', 'true')
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, credentials, mode, X-sessid')
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH')
-    if (process.env.IGNORE_CORS === 'TRUE' || process.env.CORS_ORIGINS.split(',').includes(req.headers.origin)) {
+    if (process.env.IGNORE_CORS === 'true' || process.env.CORS_ORIGINS?.split(',')?.includes(req.headers.origin)) {
         res.header('Access-Control-Allow-Origin', req.headers.origin)
     }
 
